@@ -84,7 +84,7 @@ Vagrant.configure(2) do |config|
 
     echo "Installing Node dependencies..."
     npm install -g webpack
-    npm install
+    npm install --no-bin-links
     npm shrinkwrap --dev
   SHELL
 end

@@ -22,7 +22,7 @@ function rootReducer(state = initialState, action) {
   if (action.type === FILTER_POST) {
     console.log(action.searchText);
     return Object.assign({}, state, {
-      showedArticles: state.remoteArticles.filter( (item) => item.title.startsWith(action.searchText.searchText))
+      showedArticles: state.remoteArticles.filter( (item) => item.title.includes(action.searchText.searchText))
     });
   }
   return state;

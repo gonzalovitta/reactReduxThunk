@@ -28,8 +28,8 @@ class ConnectedForm extends Component {
   render() {
     const { searchText } = this.state;
     return (
-      <form onSubmit={this.handleSubmit}>
-        <div className="form-group">
+      <form onSubmit={this.handleSubmit} className="form-inline">
+        <div className="form-group col-md-6">
           <input
             type="text"
             className="form-control"
@@ -39,7 +39,7 @@ class ConnectedForm extends Component {
             placeholder="Filtro de Nombre"
           />
         </div>
-        <button type="submit" className="btn btn-success btn-lg">
+        <button type="submit" className="btn btn-success btn-sm">
           SEARCH
         </button>
       </form>

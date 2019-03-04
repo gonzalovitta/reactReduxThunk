@@ -2,12 +2,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addPost } from "../actions/index";
+
 function mapDispatchToProps(dispatch) {
   return {
     addPost: newPost => dispatch(addPost(newPost))
   };
 }
-class postAddForm extends Component {
+class addPostForm extends Component {
   constructor() {
     super();
     this.state = {
@@ -56,5 +57,5 @@ class postAddForm extends Component {
     );
   }
 }
-const Form = connect(null, mapDispatchToProps)(postAddForm);
+const Form = connect(null, mapDispatchToProps)(addPostForm);
 export default Form;

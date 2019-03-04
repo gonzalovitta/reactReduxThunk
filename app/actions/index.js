@@ -1,10 +1,7 @@
 // src/js/actions/index.js
-import { ADD_ARTICLE, DATA_LOADED, FILTER_POST, ADD_POST, DEL_POST } from "../constants/action-types";
-export function addArticle(payload) {
-  return { type: ADD_ARTICLE, payload };
-}
+import { DATA_LOADED, FILTER_POST, ADD_POST, DEL_POST } from "../constants/action-types";
 
-export function getData() {
+export function getPosts() {
   return function(dispatch) {
     return fetch("http://localhost:3000/posts")
       .then(response => response.json())

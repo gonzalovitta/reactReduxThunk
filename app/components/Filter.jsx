@@ -2,17 +2,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { filterPosts } from "../actions/index";
-function mapDispatchToProps(dispatch) {
-  return {
-    filterPosts: searchText => dispatch(filterPosts(searchText))
-  };
-}
+
 class ConnectedForm extends Component {
   constructor() {
     super();
     this.state = {
-        searchText: ""
-    };
+      searchText: ''
+    }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -23,7 +19,6 @@ class ConnectedForm extends Component {
     event.preventDefault();
     const { searchText } = this.state;
     this.props.filterPosts({ searchText });
-    this.setState({ searchText: searchText });
   }
   render() {
     const { searchText } = this.state;
@@ -40,11 +35,24 @@ class ConnectedForm extends Component {
           />
         </div>
         <button type="submit" className="btn btn-success btn-sm">
-          SEARCH
+          Buscar
         </button>
       </form>
     );
   }
 }
-const Form = connect(null, mapDispatchToProps)(ConnectedForm);
+
+const mapStateToProps = state => {
+  return {
+    searchText: state.searchText
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    filterPosts: searchText => dispatch(filterPosts(searchText))
+  };
+}
+
+const Form = connect(mapStateToProps, mapDispatchToProps)(ConnectedForm);
 export default Form;

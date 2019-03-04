@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { getData, delPost } from "../actions/index";
+import { getPosts, delPost } from "../actions/index";
 import Post from './Post.jsx'
 
 class PostList extends Component {
@@ -10,7 +10,7 @@ class PostList extends Component {
       }
       
     componentDidMount() {
-        this.props.getData();
+        this.props.getPosts();
     }
 
     delPost(post){
@@ -29,7 +29,9 @@ class PostList extends Component {
             </tr>
         </thead>
         <tbody>
-            {this.props.posts.map(post =>  <Post delete={this.props.delPost} key={post.id} post={post} />)}
+            {this.props.posts
+                .filter( (item) => item.name.toLowerCase().includes(this.props.searchText.toLowerCase()))
+                .map(post =>  <Post delete={this.props.delPost} key={post.id} post={post} />)}
         </tbody>
         </table>
     )
@@ -38,14 +40,15 @@ class PostList extends Component {
 
 const mapStateToProps = state => {
   return {
-    posts: state.remoteArticles,
+    posts: state.remotePosts,
+    searchText: state.searchText
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
     delPost: post => dispatch(delPost(post)),
-    getData: () => dispatch(getData())
+    getPosts: () => dispatch(getPosts())
   }
 }
 

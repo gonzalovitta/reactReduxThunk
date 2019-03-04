@@ -3,7 +3,7 @@ import React from "react";
 // import List from "./List";
 // import Form from "./Form.jsx";
 import Filter from "./Filter.jsx";
-import Post from "./Posts.jsx";
+import PostList from "./PostList.jsx";
 import PostCreator from "./PostCreator.jsx";
 
 const App = () => (
@@ -20,7 +20,7 @@ const App = () => (
       <Filter />
     </div>
     <div className="col-md-7 offset-md-1">
-      <Post />
+      <PostList />
     </div>
     <div className="col-md-7 offset-md-1">
       <PostCreator />

@@ -1,5 +1,5 @@
 // src/js/actions/index.js
-import { ADD_ARTICLE, DATA_LOADED, FILTER_POST } from "../constants/action-types";
+import { ADD_ARTICLE, DATA_LOADED, FILTER_POST, ADD_POST } from "../constants/action-types";
 export function addArticle(payload) {
   return { type: ADD_ARTICLE, payload };
 }
@@ -16,4 +16,8 @@ export function getData() {
 
 export function filterPosts(searchText){
   return {type: FILTER_POST, searchText};
+}
+
+export function addPost(newPost) {
+  return { type: ADD_POST, newPost };
 }

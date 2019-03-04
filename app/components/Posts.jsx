@@ -22,7 +22,7 @@ export class Post extends Component {
 }
 function mapStateToProps(state) {
   return {
-    articles: state.showedArticles.slice(0, 10)
+    articles: state.showedArticles
   };
 }
 export default connect(

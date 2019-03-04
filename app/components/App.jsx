@@ -4,6 +4,7 @@ import React from "react";
 // import Form from "./Form.jsx";
 import Filter from "./Filter.jsx";
 import Post from "./Posts.jsx";
+import PostCreator from "./PostCreator.jsx";
 
 const App = () => (
   <div className="row mt-5">
@@ -15,12 +16,14 @@ const App = () => (
       <h2>Add a new article</h2>
       <Form />
     </div> */}
-    <div className="col-md-6 offset-md-1">
+    <div className="col-md-7 offset-md-1">
       <Filter />
     </div>
-    <div className="col-md-6 offset-md-1">
-      <h2>API posts</h2>
+    <div className="col-md-7 offset-md-1">
       <Post />
+    </div>
+    <div className="col-md-7 offset-md-1">
+      <PostCreator />
     </div>
   </div>
 );

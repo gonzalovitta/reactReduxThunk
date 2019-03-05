@@ -23,9 +23,9 @@ class PostList extends Component {
         <table className="table">
         <thead>
             <tr>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Acción</th>
             </tr>
         </thead>
         <tbody>

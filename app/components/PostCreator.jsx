@@ -31,7 +31,7 @@ class addPostForm extends Component {
     const newPost = this.state;
     return (
       <form onSubmit={this.handleSubmit} className="form-inline">
-        <div className="form-group col-md-7">
+        <div className="form-group col-md-8">
           <input
             type="text"
             className="form-control"
@@ -50,7 +50,7 @@ class addPostForm extends Component {
             placeholder="Desc"
           />
         </div>
-        <button type="submit" className="btn btn-success btn-sm">
+        <button type="submit" className="btn btn-success btn-sm" style={{marginLeft: 25+'px'}}>
           Crear
         </button>
       </form>

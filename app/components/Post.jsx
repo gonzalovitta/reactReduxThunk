@@ -5,7 +5,11 @@ const Post = props => {
     <tr>
       <td>{props.post.name}</td>
       <td>{props.post.desc}</td>
-      <td><button onClick={() => props.delete(props.post.id)}>DELETE</button></td>
+      <td>
+        <button onClick={() => props.delete(props.post.id)} className="btn btn-danger btn-sm">
+        Eliminar
+        </button>
+      </td>
     </tr>
   )
 }

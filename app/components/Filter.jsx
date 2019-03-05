@@ -24,7 +24,7 @@ class ConnectedForm extends Component {
     const { searchText } = this.state;
     return (
       <form onSubmit={this.handleSubmit} className="form-inline">
-        <div className="form-group col-md-6">
+        <div className="form-group col-md-8">
           <input
             type="text"
             className="form-control"
@@ -34,7 +34,7 @@ class ConnectedForm extends Component {
             placeholder="Filtro de Nombre"
           />
         </div>
-        <button type="submit" className="btn btn-success btn-sm">
+        <button type="submit" className="btn btn-success btn-sm" style={{marginLeft: 20 + 'px'}}>
           Buscar
         </button>
       </form>
